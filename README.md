@@ -71,6 +71,7 @@ _Features(admin account):_
 - CRUD Admin account (front end)
 - Read and/or cancel incoming orders (front end)
 - CRUD Store Discounts (by product sku or by category)
+- CRUD promo banner
 
 _Features(user account):_
 
