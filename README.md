@@ -34,6 +34,8 @@ Growing retailer with multiple brick and mortar locations wants to enhance sales
 <kbd><img src="https://github.com/persefy/sabor-grocers/assets/17712788/5ee81bd3-f778-4431-9335-fd6c909b342e" width="300" height="170"></kbd>
 
 ## Wireframes
+![image](https://github.com/persefy/sabor-grocers/assets/17712788/5e7f450d-d4b0-4bb9-a37d-7f4db18b1cce)
+![image](https://github.com/persefy/sabor-grocers/assets/17712788/6a96bff6-253b-4ff1-9f23-5090cd3f641e)
 
 
 ## Site Layout
@@ -71,7 +73,8 @@ _Features(admin account):_
 - CRUD Admin account (front end)
 - Read and/or cancel incoming orders (front end)
 - CRUD Store Discounts (by product sku or by category)
-- CRUD promo banner
+- CRUD 'promo banner' feature
+- CRUD 'inspiration'/'meal ideas' feature
 
 _Features(user account):_
 
