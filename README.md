@@ -6,7 +6,7 @@ Full stack application for fictional chain grocery stores that handles basic inv
 - Use Case
 - Technologies
 - Entity Relationship Diagram (ERD)
-- Component Component Hierarchy Diagram
+- Component Hierarchy Diagram
 - Wireframes
 - Site Layout
 - Trello Board
@@ -29,11 +29,50 @@ Growing retailer with multiple brick and mortar locations wants to enhance sales
 <kbd><img src="https://github.com/persefy/sabor-grocers/assets/17712788/78b435d6-5045-4899-aa8e-7ee0553d353f" width="300" height="170"></kbd>
 <kbd><img src="https://github.com/persefy/sabor-grocers/assets/17712788/cc8e9eb8-bf1c-4306-acab-1dda1ec29541" width="300" height="170"></kbd>
 
-### Component Component Hierarchy Diagram
+### Component Hierarchy Diagram
+
 
 ### Wireframes
 
+
 ### Site Layout
+[Coming soon]
 
 ### Trello Board
+[Sabor Grocers Kanban Board](https://trello.com/b/gvykBecL/sabor-grocers)
+
 ### MVP/Stretch Goals
+
+#### MVP
+_Features(admin account):_
+
+- CRUD Admin account (back end)
+- CRUD Stores, Products, Categories, Discounts (applicable to specific product sku or category) (front and back end)
+- Modify inventory items
+
+_Features(user account):_
+
+- Visit site pages
+- CRUD user account, cart
+- Set cart items to 'in-store pickup' or 'delivery'
+- Place order 
+
+_Features(guest):_
+
+- Visit site pages
+- Place order as guest
+  
+#### Stretch Goals
+_Features(admin account):_
+
+- CRUD Admin account (front end)
+- Read and/or cancel incoming orders (front end)
+
+_Features(user account):_
+
+- Add capability to set cart items to 'deliver to store' for 'in-store pickup'
+- Access order from account
+
+_Features(guest):_
+
+- Access order using order number
