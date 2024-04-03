@@ -15,7 +15,7 @@ class Product(models.Model):
     short_description = models.CharField(max_length=100, default='product name')
     details = models.TextField(default='product description')
     preferred_vendor = models.CharField(max_length=100, default='no vendor set')
-    average_cost = models.DecimalField()
+    average_cost = models.DecimalField(decimal_places=2, max_digits=6)
     sku = models.IntegerField()
 
     def __str__(self):
@@ -26,7 +26,7 @@ class Inventory_Adjustment(models.Model):
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='inventory_adjustments')
     count_modified_reason = models.CharField()
     qty = models.IntegerField()
-    purchase_cost = models.DecimalField()
+    purchase_cost = models.DecimalField(decimal_places=2, max_digits=6)
     vendor = models.CharField(max_length=50)
     adjustment_date = models.DateField()
     adjustment_time = models.TimeField()
@@ -35,14 +35,14 @@ class Inventory_Adjustment(models.Model):
     def __str__(self):
         return self.inventory_adjustment
 
-class Warehouse_Inventory_Item(models.Model):
+class Warehouse_Inventory_Product(models.Model):
     warehouse_inventory_product = models.CharField(max_length=9)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='warehouse_inventory_products')
     qty = models.IntegerField()
     uom = models.CharField(max_length=20)
     qty_modified_date = models.DateField()
     qty_modified_time = models.TimeField()
-    unit_price = models.DecimalField()
+    unit_price = models.DecimalField(decimal_places=2, max_digits=6)
 
     def __str__(self):
         return self.warehouse_inventory_product
@@ -89,21 +89,21 @@ class Store_Discount(models.Model):
     def __str__(self):
         return self.discount_label
     
-class Store_Inventory_Item(models.Model):
+class Store_Inventory_Product(models.Model):
     store_inventory_product = models.CharField(max_length=9)
     store_id = models.ForeignKey(Store, on_delete=models.CASCADE, related_name='store_inventory_products')
-    warehouse_inventory_product = models.ForeignKey(Warehouse_Inventory_Item, on_delete=models.CASCADE, related_name='store_inventory_products')
+    warehouse_inventory_product = models.ForeignKey(Warehouse_Inventory_Product, on_delete=models.CASCADE, related_name='store_inventory_products')
     store_discount = models.ForeignKey(Store_Discount, on_delete=models.CASCADE, related_name='store_inventory_products')
     qty = models.IntegerField()
-    store_set_price = models.DecimalField()
-    discounted_price = models.DecimalField()
+    store_set_price = models.DecimalField(decimal_places=2, max_digits=6)
+    discounted_price = models.DecimalField(decimal_places=2, max_digits=6)
     transfer_shipping_enabled = models.BooleanField()
 
     def __str__(self):
         return self.store_inventory_product
     
 class Admin_User(models.Model):
-    id = models.CharField(max_length=9)
+    admin_user_id = models.CharField(max_length=9)
     store_id = models.ForeignKey(Store, on_delete=models.CASCADE, related_name='admin_users')
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
@@ -113,10 +113,10 @@ class Admin_User(models.Model):
     last_login_time = models.TimeField()
 
     def __str__(self):
-        return self.id
+        return self.admin_user_id
     
 class Customer_User(models.Model):
-    id = models.CharField(max_length=9)
+    customer_user_id = models.CharField(max_length=9)
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
     store_id = models.ForeignKey(Store, on_delete=models.CASCADE, related_name='customer_users')
@@ -130,7 +130,7 @@ class Customer_User(models.Model):
     last_login_time = models.TimeField()
 
     def __str__(self):
-        return self.id
+        return self.customer_user_id
     
 class Cart(models.Model):
     cart_id = models.CharField(max_length=9)
@@ -155,9 +155,9 @@ class Order(models.Model):
     time = models.TimeField()
     #product = models.<prod + qty need to be within a list/array/object>
     qty = models.IntegerField()
-    sales_subtotal = models.DecimalField()
-    taxes = models.DecimalField()
-    sales_total = models.DecimalField()
+    sales_subtotal = models.DecimalField(decimal_places=2, max_digits=6)
+    taxes = models.DecimalField(decimal_places=2, max_digits=5)
+    sales_total = models.DecimalField(decimal_places=2, max_digits=6)
 
     def __str__(self):
         return self.order_no
