@@ -1,4 +1,4 @@
 -- settings.sql
-CREATE DATABASE saborgrocers;
-CREATE USER saborgrocersuser WITH PASSWORD '1234';
-GRANT ALL PRIVILEGES ON DATABASE saborgrocers TO saborgrocersuser;
+CREATE DATABASE saborg;
+CREATE USER saborguser WITH PASSWORD '1234';
+GRANT ALL PRIVILEGES ON DATABASE saborg TO saborguser;
