@@ -7,12 +7,23 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
     class Meta:
         verbose_name_plural = "categories"
+
+class Subcategory(models.Model):
+    name = models.CharField(max_length=100, primary_key=True, unique=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='subcategories')
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name_plural = "subcategories"
     
 class Product(models.Model):
     product_id = models.CharField(max_length=9, primary_key=True, unique=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
+    subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, related_name='products', default='dairy')
     short_description = models.CharField(max_length=100, default='product name')
     details = models.TextField(default='product description')
     preferred_vendor = models.CharField(max_length=100, default='no vendor set')
