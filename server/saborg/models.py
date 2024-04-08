@@ -3,14 +3,15 @@ from django.db import models
 # Create your models here.
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
-    prefix = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, primary_key=True, unique=True)
 
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name_plural = "categories"
     
 class Product(models.Model):
-    product_id = models.CharField(max_length=9)
+    product_id = models.CharField(max_length=9, primary_key=True, unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
     short_description = models.CharField(max_length=100, default='product name')
     details = models.TextField(default='product description')
@@ -22,7 +23,7 @@ class Product(models.Model):
         return self.product_id
     
 class Inventory_Adjustment(models.Model):
-    inventory_adjustment = models.CharField(max_length=9)
+    inventory_adjustment = models.CharField(max_length=9, primary_key=True, unique=True)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='inventory_adjustments')
     count_modified_reason = models.CharField()
     qty = models.IntegerField()
@@ -36,9 +37,8 @@ class Inventory_Adjustment(models.Model):
         return self.inventory_adjustment
 
 class Warehouse_Inventory_Product(models.Model):
-    warehouse_inventory_product = models.CharField(max_length=9)
+    warehouse_inventory_product = models.CharField(max_length=9, primary_key=True, unique=True)
     inventory_adjustment = models.ForeignKey(Inventory_Adjustment, on_delete=models.CASCADE, related_name='warehouse_inventory_products')
-    #product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='warehouse_inventory_products')
     qty = models.IntegerField()
     uom = models.CharField(max_length=20)
     qty_modified_date = models.DateField()
@@ -49,9 +49,7 @@ class Warehouse_Inventory_Product(models.Model):
         return self.warehouse_inventory_product
     
 class Store_Discount(models.Model):
-    discount_label = models.CharField(max_length=100)
-    # store_id = models.ForeignKey(Store, on_delete=models.CASCADE, related_name='store_inventory_products')
-    # category_name = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='store_discount')
+    discount_label = models.CharField(max_length=100, primary_key=True, unique=True)
     discounted_sku = models.IntegerField()
     discounted_category = models.CharField(max_length=100)
     start_date = models.DateField()
@@ -61,7 +59,7 @@ class Store_Discount(models.Model):
         return self.discount_label
 
 class Store(models.Model):
-    store_id = models.CharField(max_length=4)
+    store_id = models.CharField(max_length=4, primary_key=True, unique=True)
     address = models.TextField()
     sunday_open = models.BooleanField()
     monday_open = models.BooleanField()
@@ -91,7 +89,7 @@ class Store(models.Model):
         return self.store_id
     
 class Store_Inventory_Product(models.Model):
-    store_inventory_product = models.CharField(max_length=9)
+    store_inventory_product = models.CharField(max_length=9, primary_key=True, unique=True)
     store_id = models.ForeignKey(Store, on_delete=models.CASCADE, related_name='store_inventory_products')
     warehouse_inventory_product = models.ForeignKey(Warehouse_Inventory_Product, on_delete=models.CASCADE, related_name='store_inventory_products')
     store_discount = models.ForeignKey(Store_Discount, on_delete=models.CASCADE, related_name='store_inventory_products')
@@ -104,12 +102,9 @@ class Store_Inventory_Product(models.Model):
         return self.store_inventory_product
     
 class Admin_User(models.Model):
-    admin_user_id = models.CharField(max_length=9)
-    #store_id = models.ForeignKey(Store, on_delete=models.CASCADE, related_name='admin_users')
+    admin_user_id = models.CharField(max_length=9, primary_key=True, unique=True)
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
-    #associated_store = models.CharField(max_length=100)
-    #edit_access = models.CharField(max_length=100)
     last_login_date = models.DateField()
     last_login_time = models.TimeField()
 
@@ -117,10 +112,9 @@ class Admin_User(models.Model):
         return self.admin_user_id
     
 class Customer_User(models.Model):
-    customer_user_id = models.CharField(max_length=9)
+    customer_user_id = models.CharField(max_length=9, primary_key=True, unique=True)
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
-    #store_id = models.ForeignKey(Store, on_delete=models.CASCADE, related_name='customer_users')
     preferred_store = models.CharField(max_length=100)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -134,18 +128,16 @@ class Customer_User(models.Model):
         return self.customer_user_id
     
 class Cart(models.Model):
-    cart_id = models.CharField(max_length=9)
+    cart_id = models.CharField(max_length=9, primary_key=True, unique=True)
     customer_id = models.ForeignKey(Customer_User, on_delete=models.CASCADE, related_name='carts',blank=True)
     guest_checkout = models.BooleanField(default=True)
-    # product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='carts')
-    # qty = models.IntegerField()
     cart_type = models.CharField(max_length=100)
     
     def __str__(self):
         return self.cart_id
     
 class Cart_Item(models.Model):
-    cart_item = models.CharField(max_length=9)
+    cart_item = models.CharField(max_length=9, primary_key=True, unique=True)
     cart_id = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='cart_items')
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='cart_items')
     qty = models.IntegerField()
@@ -154,10 +146,8 @@ class Cart_Item(models.Model):
         return self.cart_item
 
 class Order(models.Model):
-    order_no = models.CharField(max_length=12)
+    order_no = models.CharField(max_length=12, primary_key=True, unique=True)
     cart_id = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='orders')
-    #customer_id = models.ForeignKey(Customer_User, on_delete=models.CASCADE, related_name='orders')
-    #product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='orders')
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email=models.CharField(max_length=100)
@@ -165,8 +155,6 @@ class Order(models.Model):
     phone = models.CharField(max_length=15)
     date = models.DateField()
     time = models.TimeField()
-    #product = models.<prod + qty need to be within a list/array/object>
-    #qty = models.IntegerField()
     sales_subtotal = models.DecimalField(decimal_places=2, max_digits=6)
     taxes = models.DecimalField(decimal_places=2, max_digits=5)
     sales_total = models.DecimalField(decimal_places=2, max_digits=6)
