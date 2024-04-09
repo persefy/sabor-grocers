@@ -12,8 +12,8 @@ export default function Header() {
             <div className="h1-container">
                 <h1 onClick={()=> {navigate('/')}}><img src={logo} alt='sabor grocers logo' className='logo'></img><span>Sabor Grocers</span></h1>
             </div>
-            <Nav/>
             <SearchBar/>
+            <Nav/>
         </header>
         </>
     )

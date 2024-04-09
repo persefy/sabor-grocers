@@ -4,9 +4,9 @@ export default function Nav() {
     return(
         <>
         <nav>
-        <Link to='/fresh-foods'>Fresh Foods</Link>
-        <Link to='/coffee'>Coffee</Link>
-        <Link to='/kitchen'>Kitchen</Link>
+            <Link className='nav-item' to='/fresh-foods'>Fresh Foods</Link>
+            <Link className='nav-item' to='/coffee'>Coffee</Link>
+            <Link className='nav-item' to='/kitchen'>Kitchen</Link>
         </nav>
         </>
 
