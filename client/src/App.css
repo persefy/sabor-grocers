@@ -1,42 +1,78 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Global Styling Below ------------------ */
+body {
   text-align: center;
+  position: relative;
+  background-color: #e1fbe1;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* Global Styling Above ------------------- */
+/* Header Styling Below ------------------- */
+header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* border-bottom: solid 1px #ddd; */
+  box-shadow: 1px 1px 10px #c7f8ce;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.h1-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  cursor: pointer;
+  margin: 0;
+  width: 150px;
+  height: 90px;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 span {
+  width: 1px;
+  height: 1px;
+  visibility: hidden;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h1 img.logo {
+  width: 150px;
 }
-
-.card {
-  padding: 2em;
+/* Nav styling ------ */
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #248842;
+  padding: 2px;
 }
-
-.read-the-docs {
-  color: #888;
+a.nav-item {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #eee;
+  font-family: 'Arial';
+  display: inline-block;
+  padding: 2px;
 }
+/* Search Styling --- */
+form.search-form {
+  border: solid 1px red;
+  text-align: right;
+  padding-right: 50px;
+  margin: 10px 0;
+}
+form input.search-input {
+  width: 60px;
+}
+form.search-form button {
+  cursor: pointer;
+}
+form.search-form button img {
+  width: 15px;
+}
+/* Header Styling Above ------------------- */
+/* Main Styling Below --------------------- */
+main {
+  min-height: 500px;
+  margin-top: 230px;
+}
+/* Main Styling Above --------------------- */
+/* Footer Styling Below ------------------- */
+footer {
+  border: solid 1px green;
+}
+/* Footer Styling Above ------------------- */
