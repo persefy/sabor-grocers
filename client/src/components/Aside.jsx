@@ -1,7 +1,10 @@
 export default function Aside() {
     return(
         <>
-        {/* Cart quickview will display here */}
+        <aside>
+            <div>Aside</div>
+            {/* Cart quickview will display here */}
+        </aside>
         </>
     )
 }
