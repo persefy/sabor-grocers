@@ -14,9 +14,10 @@ function App() {
   const [dimState, setDimState] = useState(false)
 
   return (
-    <>
+    <div>
     <DataContext.Provider value={{dimState, setDimState}}>
       <DimmerDimmable as={Segment} dimmed={dimState}>
+        
         <Header/>
         <Main/>
         <Footer/>
@@ -28,7 +29,7 @@ function App() {
       <SearchBar/>
       <Button icon='plus' onClick={()=>setDimState(true)} /> */}
     </DataContext.Provider>
-    </>
+    </div>
   )
 }
 
