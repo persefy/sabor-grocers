@@ -1,19 +1,19 @@
-import searchIcon from '../assets/searchIcon.png'
+import { Button, FormInput, FormGroup, FormButton, Form } from 'semantic-ui-react'
+
 export default function SearchBar() {
     
     return(
         <>
-        <form className="search-form">
-            <input type="text" placeholder='search...' className='search-input'
-                onClick={()=> {
-                    document.querySelector('.search-input').style.width = '50%'
-            }}/>
-            <button>
-                
-                {/* <span className='search-btn-text'> search</span> */}
-                <img src={searchIcon} alt='search icon'/>
-            </button>
-        </form>
+        
+        <Form className="search-form">
+          <FormGroup>
+            <FormInput
+              placeholder='search...'
+              name='searchQuery'
+            />
+            <FormButton content='Search'/>
+          </FormGroup>
+        </Form>
         </>
     )
 }

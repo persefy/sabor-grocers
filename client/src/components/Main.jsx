@@ -24,7 +24,7 @@ export default function Main() {
                 <Route exact path ="/user" element ={<User/>} />
                 <Route exact path ="/cart" element ={<Cart/>} />
                 <Route exact path ="/order" element ={<Order/>} />
-  			</Routes>
+            </Routes>
         </main>
         </>
     )

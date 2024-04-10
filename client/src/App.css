@@ -4,6 +4,11 @@ body {
   position: relative;
   background-color: #e1fbe1;
 }
+.dim-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 /* Global Styling Above ------------------- */
 /* Header Styling Below ------------------- */
 header {
@@ -49,7 +54,7 @@ a.nav-item {
   padding: 2px;
 }
 /* Search Styling --- */
-form.search-form {
+/* form.search-form {
   border: solid 1px red;
   text-align: right;
   padding-right: 50px;
@@ -58,11 +63,13 @@ form.search-form {
 form input.search-input {
   width: 60px;
 }
-form.search-form button {
-  cursor: pointer;
-}
-form.search-form button img {
-  width: 15px;
+*/
+.search-form-toggle button img {
+  width: 23px;
+} 
+.cart-icon .cart {
+  display: inline-block;
+  padding: 4px 5px 15px;
 }
 /* Header Styling Above ------------------- */
 /* Main Styling Below --------------------- */
