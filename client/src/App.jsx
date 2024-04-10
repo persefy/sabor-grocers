@@ -14,20 +14,18 @@ function App() {
   const [dimState, setDimState] = useState(false)
 
   return (
-    <div>
+    <div className='app'>
     <DataContext.Provider value={{dimState, setDimState}}>
       <DimmerDimmable as={Segment} dimmed={dimState}>
-        
         <Header/>
         <Main/>
         <Footer/>
         <Dimmer active={dimState} onClickOutside={()=>setDimState(false)}>
           <Button icon='close' className='dim-close-button' onClick={()=>setDimState(false)} />
+          <div className='search-popup-div'><SearchBar/></div>
+          <div className='cart-popup-div'><Aside/></div>
         </Dimmer>
       </DimmerDimmable>
-      {/* <Aside/>
-      <SearchBar/>
-      <Button icon='plus' onClick={()=>setDimState(true)} /> */}
     </DataContext.Provider>
     </div>
   )

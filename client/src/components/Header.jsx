@@ -18,12 +18,14 @@ export default function Header() {
             </div>
             <div className="icon-buttons-holder">
                 <div className='search-form-toggle'>
-                    <Button size='tiny' className='basic gray' onClick={()=>setDimState(true)}>
+                    <Button size='tiny' className='basic gray' onClick={()=>
+                        {setDimState(true);document.querySelector('.cart-quickview').classList.add('hide-this');document.querySelector('.search-form').classList.remove('hide-this');}}>
                         <img src={searchIcon} alt='search icon'/>
                     </Button>
                 </div>
                 <div className='cart-toggle-mobile'>
-                    <Button size='tiny' className='basic gray cart-icon' onClick={()=>setDimState(true)}>
+                    <Button size='tiny' className='basic gray cart-icon' onClick={()=>
+                        {setDimState(true);document.querySelector('.cart-quickview').classList.remove('hide-this');document.querySelector('.search-form').classList.add('hide-this');}}>
                         <Icon name='cart' size='large'/>
                     </Button>
                 </div>
