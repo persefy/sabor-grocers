@@ -100,6 +100,7 @@ class Store(models.Model):
     saturday_end_time = models.TimeField(blank=True)
     store_phone = models.CharField(max_length=15)
     special_msg = models.TextField()
+    image_url = models.URLField(default='https://morguefile.nyc3.cdn.digitaloceanspaces.com/imageData/public/files/w/wallyir/preview/fldr_2010_05_06/file7421273138239.jpg')
 
     def __str__(self):
         return self.store_no
