@@ -148,7 +148,7 @@ class Customer_User(models.Model):
     
 class Cart(models.Model):
     cart_no = models.CharField(max_length=9, unique=True)
-    customer_no = models.ForeignKey(Customer_User, on_delete=models.CASCADE, related_name='carts',blank=True)
+    customer_user_no = models.ForeignKey(Customer_User, on_delete=models.CASCADE, related_name='carts',blank=True)
     guest_checkout = models.BooleanField(default=True)
     cart_type = models.CharField(max_length=100)
     

@@ -3,51 +3,105 @@ from .models import Category, Subcategory, Product, Inventory_Adjustment, Wareho
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
    #self
+    order_url = serializers.ModelSerializer.serializer_url_field(
+        view_name='cart_item_detail'
+    )
    #parent
-   
+    cart_no = serializers.HyperlinkedRelatedField(
+        view_name='cart_detail',
+        read_only=True
+    )
+    cart_no_id = serializers.PrimaryKeyRelatedField(
+        queryset=Cart.objects.all(),
+        source='cart_no'
+    )
     class Meta:
        model = Order
-       fields = ('id','cart_no', 'first_name', 'last_name', 'email', 'address', 'phone', 'date', 'time', 'sales_subtotal', 'taxes', 'sales_total')
+       fields = ('id','order_no','order_url','first_name', 'last_name', 'email', 'address', 'phone', 'date', 'time', 'sales_subtotal', 'taxes', 'sales_total','cart_no','cart_no_id')
 
 # ----------------------------------------------------------------------------------
 
 class CartItemSerializer(serializers.HyperlinkedModelSerializer):
     #self
-    #parent
-    #child
+    cart_item_url = serializers.ModelSerializer.serializer_url_field(
+        view_name='cart_item_detail'
+    )
+    #parent(s)
+    cart_no = serializers.HyperlinkedRelatedField(
+        view_name='cart_detail',
+        read_only=True
+    )
+    cart_no_id = serializers.PrimaryKeyRelatedField(
+        queryset=Cart.objects.all(),
+        source='cart_no'
+    )
+    product_no = serializers.HyperlinkedRelatedField(
+        view_name='product_detail',
+        read_only=True
+    )
+    product_no_id = serializers.PrimaryKeyRelatedField(
+        queryset=Product.objects.all(),
+        source='product_no'
+    )
     class Meta:
        model = Cart_Item
-       fields = ('id','cart_item', 'cart_no', 'product_no', 'qty')
+       fields = ('id','cart_item','cart_item_url', 'qty', 'cart_no','cart_no_id', 'product_no','product_no_id')
 
 # ----------------------------------------------------------------------------------
 
 class CartSerializer(serializers.HyperlinkedModelSerializer):
     #self
+    cart_no_url = serializers.ModelSerializer.serializer_url_field(
+        view_name='cart_detail'
+    )
     #parent
+    customer_user_no = serializers.HyperlinkedRelatedField(
+        view_name='customer_user_detail',
+        read_only=True
+    )
+    customer_user_no_id = serializers.PrimaryKeyRelatedField(
+        queryset=Customer_User.objects.all(),
+        source='customer_user_no'
+    )
     #child
+    cart_items = CartItemSerializer (
+        many=True,
+        read_only=True
+    )
+    orders = OrderSerializer(
+        many=True,
+        read_only=True
+    )
     class Meta:
        model = Cart
-       fields = ('id','cart_no','customer_no','guest_checkout','cart_type')
+       fields = ('id','cart_no','cart_no_url','guest_checkout','cart_type', 'customer_user_no','customer_user_no_id','cart_items','orders')
 
 # ----------------------------------------------------------------------------------
 
 class CustomerUserSerializer(serializers.HyperlinkedModelSerializer):
     #self
-    #parent
+    customer_user_url = serializers.ModelSerializer.serializer_url_field(
+        view_name='customer_user_detail'
+    )
     #child
+    carts = CartSerializer (
+        many=True,
+        read_only=True
+    )
     class Meta:
        model = Customer_User
-       fields = ('id','customer_user_no', 'username', 'password', 'preferred_store', 'first_name', 'last_name', 'street_address', 'street_address2', 'city', 'state', 'phone', 'email', 'last_login_date','last_login_time')
+       fields = ('id','customer_user_no','customer_user_url', 'username', 'password', 'preferred_store', 'first_name', 'last_name', 'street_address', 'street_address2', 'city', 'state', 'phone', 'email', 'last_login_date','last_login_time','carts')
 
 # ----------------------------------------------------------------------------------
 
 class AdminUserSerializer(serializers.HyperlinkedModelSerializer):
     #self
-    #parent
-    #child
+    admin_user_url = serializers.ModelSerializer.serializer_url_field(
+        view_name='admin_user_detail'
+    )
     class Meta:
        model = Admin_User
-       fields = ('id','admin_user_no', 'username', 'password', 'last_login_date', 'last_login_time')
+       fields = ('id','admin_user_no','admin_user_url', 'username', 'password', 'last_login_date', 'last_login_time')
 
 # ----------------------------------------------------------------------------------
 
@@ -81,11 +135,6 @@ class StoreInventoryProductSerializer(serializers.HyperlinkedModelSerializer):
         queryset=Store_Discount.objects.all(),
         source='store_discount'
     )
-#     #child 
-#     warehouse_inventory_products = WarehouseInventoryProductSerializer (
-#         many=True,
-#         read_only=True
-#     )
 
     class Meta:
        model = Store_Inventory_Product
@@ -99,21 +148,29 @@ class StoreSerializer(serializers.HyperlinkedModelSerializer):
         view_name='store_detail'
     )
     #child
-
+    store_inventory_products = StoreInventoryProductSerializer (
+        many=True,
+        read_only=True
+    )
     class Meta:
        model = Store
-       fields = ('id','store_url','store_no','street_address', 'city', 'state', 'sunday_open', 'monday_open', 'tuesday_open', 'wednesday_open', 'thursday_open', 'friday_open', 'saturday_open', 'sunday_start_time', 'sunday_end_time','monday_start_time','monday_end_time', 'tuesday_start_time', 'tuesday_end_time', 'wednesday_start_time', 'wednesday_end_time','thursday_start_time','thursday_end_time', 'friday_start_time', 'friday_end_time', 'saturday_start_time', 'saturday_end_time','store_phone','special_msg')
+       fields = ('id','store_url','store_no','street_address', 'city', 'state', 'sunday_open', 'monday_open', 'tuesday_open', 'wednesday_open', 'thursday_open', 'friday_open', 'saturday_open', 'sunday_start_time', 'sunday_end_time','monday_start_time','monday_end_time', 'tuesday_start_time', 'tuesday_end_time', 'wednesday_start_time', 'wednesday_end_time','thursday_start_time','thursday_end_time', 'friday_start_time', 'friday_end_time', 'saturday_start_time', 'saturday_end_time','store_phone','special_msg','store_inventory_products')
 
-# 'store_inventory_product','store_inventory_product_url'
 # ----------------------------------------------------------------------------------
 
 class StoreDiscountSerializer(serializers.HyperlinkedModelSerializer):
-    #child 
-    #parent
+    #self
+    store_discount_url = serializers.ModelSerializer.serializer_url_field(
+        view_name='store_discount_detail'
+    )
     #child
+    store_inventory_products = StoreInventoryProductSerializer (
+        many=True,
+        read_only=True
+    )
     class Meta:
        model = Store_Discount
-       fields = ('id','discount_label', 'discounted_sku', 'discounted_category','discount_percentage', 'start_date', 'end_date')
+       fields = ('id','discount_label','store_discount_url', 'discounted_sku', 'discounted_category','discount_percentage', 'start_date', 'end_date','store_inventory_products')
 
 # ----------------------------------------------------------------------------------
 
@@ -128,12 +185,17 @@ class WarehouseInventoryProductSerializer(serializers.HyperlinkedModelSerializer
         read_only=True
     )
     inventory_adjustment_id = serializers.PrimaryKeyRelatedField(
-        queryset=Product.objects.all(),
+        queryset=Inventory_Adjustment.objects.all(),
         source='inventory_adjustment'
+    )
+    #child 
+    store_inventory_products = StoreInventoryProductSerializer (
+        many=True,
+        read_only=True
     )
     class Meta:
        model = Warehouse_Inventory_Product
-       fields = ('id','warehouse_inventory_product','warehouse_inventory_product_url', 'qty', 'uom', 'qty_modified_date', 'qty_modified_time', 'unit_price','inventory_adjustment','inventory_adjustment_id')
+       fields = ('id','warehouse_inventory_product','warehouse_inventory_product_url', 'qty', 'uom', 'qty_modified_date', 'qty_modified_time', 'unit_price','inventory_adjustment','inventory_adjustment_id', 'store_inventory_products')
     
 # ----------------------------------------------------------------------------------
 
