@@ -65,6 +65,7 @@ class Store_Discount(models.Model):
     discount_label = models.CharField(max_length=100, unique=True)
     discounted_sku = models.IntegerField()
     discounted_category = models.CharField(max_length=100)
+    discount_percentage = models.DecimalField(decimal_places=2, max_digits=3, default=0.00)
     start_date = models.DateField()
     end_date = models.DateField()
 
