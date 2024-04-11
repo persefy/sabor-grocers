@@ -31,19 +31,19 @@ function App() {
     {
       'name': '',
       'image_url':'',
-      'id':''
+      'id':'',
       
     },
     {
       'name': '',
       'image_url':'',
-      'id':''
+      'id':'',
 
     },
     {
       'name': '',
       'image_url':'',
-      'id':''
+      'id':'',
 
     }
 

@@ -1,20 +1,23 @@
-import { useEffect, useContext } from 'react'
+import { useEffect, useContext,useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import DataContext  from '../DataContext';
 
 export default function FilteredResults() {
     const { subcategoryData, setSubcategoryData, selectedSubcategory, setSelectedSubcategory,products,setProducts} = useContext(DataContext);
+    const [selectedSubData, setSelectedSubData] = useState('')
+
     let navigate = useNavigate()
 
     useEffect(() => {
         const getCategory = async() => {
             const response = await axios.get(`http://localhost:8000/products/`)
-            const response2 = await axios.get(`http://localhost:8000/subcategories/`)
+            const response2 = await axios.get(`http://localhost:8000/subcategories/${selectedSubcategory}`)
             setProducts(response.data)
-            setSubcategoryData(response2.data)
+            setSelectedSubData(response2.data)
             console.log(products)
-            console.log(subcategoryData)
+            console.log(selectedSubData)
+
         }
         getCategory()
     }, [])
@@ -27,15 +30,16 @@ export default function FilteredResults() {
         }
     })
     console.log(filteredResults)
+    console.log(selectedSubcategory)
 
-    if (!subcategoryData) {
+    if (!products) {
         return <h1>Loading data...</h1>
     } else {
         return (
             <>
             <div className="main-content results-page">
                 <h2>Results</h2>
-                    <h3>{subcategoryData[selectedSubcategory].name}</h3>
+                    <h3>{selectedSubData.name}</h3>
                     <div className='results-holder'>
                         {filteredResults.map(result => (
                         <div className='result' key={result.id} onClick={()=> {
