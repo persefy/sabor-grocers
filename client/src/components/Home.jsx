@@ -1,17 +1,21 @@
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useContext } from 'react'
+import DataContext  from '../DataContext';
 import { Button } from 'semantic-ui-react'
 import axios from 'axios'
 
 export default function Home() {
+    const { categoryData, setCategoryData} = useContext(DataContext);
+    
     let navigate = useNavigate()
-    const [categories, setCategories] = useState()
 
     useEffect(() => {
         const getCategory = async() => {
             const response = await axios.get(`http://localhost:8000/categories/`)
             setCategories(response.data)
-            console.log(response.data)
+            setCategoryData(response.data)
+            // console.log(response.data)
+            console.log(categoryData)
         }
         getCategory()
     }, [])
@@ -33,18 +37,21 @@ export default function Home() {
                 <p>We carry specialty, quality coffee beans freshly imported from Colombia, Brazil and more! </p>
             </div>
             <div>
-                <ul>
-                    <li onClick={()=> {navigate('/fresh-foods')}}>Fresh Foods</li>
-                    <li onClick={()=> {navigate('/coffee')}}>Coffee</li>
-                    <li onClick={()=> {navigate('/kitchen')}}>Kitchen</li>
+                <p>Click below to see our online selection available for local delivery or order for in-store pick-up.</p>
+                <ul className='home-category-links'>
+                    <li onClick={()=> {navigate('/fresh-foods')}}>
+                        <span><img src={categoryData[0].image_url}/></span>
+                        <span>Fresh Foods</span>
+                    </li>
+                    <li onClick={()=> {navigate('/coffee')}}>
+                        <span><img src={categoryData[1].image_url}/></span>
+                        <span>Coffee</span>
+                    </li>
+                    <li onClick={()=> {navigate('/kitchen')}}>
+                        <span><img src={categoryData[2].image_url}/></span>
+                        <span>Kitchen</span>
+                    </li>
                 </ul>
-                    {/* <div className='categories-holder'>
-                        {categories.map(category => (
-                            <div className='category' key={category.id}>
-                            <div>Hello</div>
-                            </div>
-                        ))}
-                    </div> */}
             </div>
             <div className='home-block'>
                 <p>Fresh foods await!</p>

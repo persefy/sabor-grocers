@@ -12,10 +12,11 @@ import './App.css'
 
 function App() {
   const [dimState, setDimState] = useState(false)
+  const [categoryData, setCategoryData] = useState([])
 
   return (
     <div className='app'>
-    <DataContext.Provider value={{dimState, setDimState}}>
+    <DataContext.Provider value={{dimState, setDimState, categoryData, setCategoryData}}>
       <DimmerDimmable as={Segment} dimmed={dimState}>
         <Header/>
         <Main/>
