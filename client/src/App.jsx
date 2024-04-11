@@ -5,7 +5,7 @@ import DataContext from './DataContext'
 import Header from './components/Header'
 import Main from './components/Main'
 import Footer from './components/Footer'
-import Aside from './components/Aside'
+import CartQuickView from './components/CartQuickView'
 import SearchBar from './components/SearchBar'
 import './App.css'
 
@@ -81,10 +81,50 @@ function App() {
   const [selectedSubcategory, setSelectedSubcategory] = useState(0)
 
   const [productSearchQuery, setProductSearchQuery] = useState('')
-  
+  const [cartInfo, setCartInfo] = useState({
+    'cart no': '', 
+    'customer_user_no': '3',
+    'guest_checkout':'True',
+    'cart_type':'delivery'
+  })
+  const [getCartData, setGetCartData] = useState([
+    {
+    'cart no': '', 
+    'customer_user_no': '',
+    'guest_checkout':'',
+    'cart_type':''
+    },
+    {
+    'cart no': '', 
+    'customer_user_no': '',
+    'guest_checkout':'',
+    'cart_type':''
+    }
+  ])
+  const [cartItemInfo, setCartItemInfo] = useState({
+    'cart_item': '',
+    'cart_no': '',
+    'product_no': '',
+    'qty': 0
+  })
+  const [getCartItemData, setGetCartItemData] = useState([
+    {
+      'cart_item': '',
+      'cart_no': '',
+      'product_no': '',
+      'qty': 0,
+    },
+    {
+      'cart_item': '',
+      'cart_no': '',
+      'product_no': '',
+      'qty': 0,
+    }
+  ])
+
   return (
     <div className='app'>
-    <DataContext.Provider value={{dimState, setDimState, categoryData, setCategoryData,subcategoryData, setSubcategoryData,products,setProducts, selectedSubcategory, setSelectedSubcategory,selectedProduct, setselectedProduct,productSearchQuery, setProductSearchQuery}}>
+    <DataContext.Provider value={{dimState, setDimState, categoryData, setCategoryData,subcategoryData, setSubcategoryData,products,setProducts, selectedSubcategory, setSelectedSubcategory,selectedProduct, setselectedProduct,productSearchQuery, setProductSearchQuery,cartInfo, setCartInfo,getCartData, setGetCartData, cartItemInfo, setCartItemInfo,getCartItemData, setGetCartItemData}}>
       <DimmerDimmable as={Segment} dimmed={dimState}>
         <Header/>
         <Main/>
@@ -92,7 +132,7 @@ function App() {
         <Dimmer active={dimState} onClickOutside={()=>setDimState(false)}>
           <Button icon='close' className='dim-close-button' onClick={()=>setDimState(false)} />
           <div className='search-popup-div'><SearchBar/></div>
-          <div className='cart-popup-div'><Aside/></div>
+          <div className='cart-popup-div'><CartQuickView/></div>
         </Dimmer>
       </DimmerDimmable>
     </DataContext.Provider>

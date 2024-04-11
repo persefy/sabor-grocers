@@ -3,7 +3,6 @@ import Home from './Home'
 import FilteredResults from './FilteredResults'
 import ItemDetail from './ItemDetail'
 import StoreList from './StoreList'
-import User from './User'
 import Cart from './Cart'
 import Order from './Order'
 import FreshFoods from './FreshFood'
@@ -32,7 +31,6 @@ export default function Main() {
                 <Route exact path ="/products/:id" element ={<ItemDetail/>} />
                 <Route exact path ="/stores" element ={<StoreList convertTime={convertTime}/>} />
                 <Route exact path ="/user" element ={<Home/>} />
-                <Route exact path ="/user" element ={<User/>} />
                 <Route exact path ="/cart" element ={<Cart/>} />
                 <Route exact path ="/order" element ={<Order/>} />
             </Routes>

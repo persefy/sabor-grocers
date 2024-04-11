@@ -1,7 +1,8 @@
+import Cart from "./Cart"
 export default function CartQuickView() {
     return(
-        <>
-        {/* Quick view display of cart containing items added + qty */}
-        </>
+        <div className="cart-quickview">
+            <Cart/>
+        </div>
     )
 }

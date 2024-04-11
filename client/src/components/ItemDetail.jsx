@@ -19,6 +19,8 @@ export default function ItemDetail() {
         }
         getCategory()
     }, [])
+
+    // Add item to cart
     return(
         <>
         <div className='main-content item-detail'>
@@ -34,7 +36,13 @@ export default function ItemDetail() {
                 </div>
             </div>
             <p className='result-cost item-page-cost'>${selectedProduct.average_cost}</p>
-            <Button className='green'><Icon name='plus' size='large'/>Add to Cart</Button>
+            <Button className='green'
+                onClick={()=>{
+
+                    
+                    // create a cart if none already existing
+                    // add cart item to cart
+                }}><Icon name='plus' size='large'/>Add to Cart</Button>
         </div>
         </>
     )
