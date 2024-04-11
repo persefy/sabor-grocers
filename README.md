@@ -61,6 +61,8 @@ Growing retailer with multiple brick and mortar locations wants to enhance sales
 ## Trello Board
 [Sabor Grocers Kanban Board](https://trello.com/b/gvykBecL/sabor-grocers)
 
+<kbd><img src="./readme-files/sampleTrelloBoard.png" width="500" height="500">
+
 ## MVP/Stretch Goals
 
 ### MVP
