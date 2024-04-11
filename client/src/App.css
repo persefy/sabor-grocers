@@ -3,11 +3,23 @@ body {
   text-align: center;
   position: relative;
 }
+h2 {
+  font-size: 2.5rem;
+  text-align: left;
+  padding-left: 10px;
+}
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
 .dim-close-button {
   position: fixed;
   top: 5%;
   right: 10%;
   z-index: 10;
+}
+.ui.segment.dimmable {
+  padding: 0;
 }
 /* Global Styling Above ------------------- */
 /* Header Styling Below ------------------- */
@@ -18,6 +30,7 @@ header {
   top: 0;
   box-shadow: 1px 1px 10px #c7f8ce;
   background-color: #d0fadc;
+  z-index: 5
 }
 .h1-container {
   width: 100%;
@@ -107,9 +120,77 @@ a.nav-item:hover {
 /* Main Styling Below --------------------- */
 main {
   min-height: 500px;
-  margin-top: 230px;
+  margin-top: 170px;
 }
 /* Main Styling Above --------------------- */
+/* Stores Styling Below ------------------- */
+.stores-intro-msg {
+  font-size: 1.25rem;
+  background-color: #eadb54;
+  padding: 10px;
+  margin: 10px;
+}
+.store {
+  border-bottom: 1px solid #e2e0e0;
+  margin: 10px;
+}
+.stores-holder .store-columns {
+  display: flex;
+  padding: 10px;
+  flex-direction: row-reverse;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.stores-holder .store-item {
+  width: 50%;
+  margin-bottom: 10px;
+}
+.stores-holder .store-item h3 {
+  font-size: 1.5rem;
+  padding-top: 15px;
+}
+.stores-holder .store-item:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top center;
+}
+.stores-holder > div img {
+  width: 100%;
+  border-radius: 2px;
+}
+.store-address {
+  font-size: 1.5rem;
+  padding: 2px 0 2px;
+}
+.toggle-store-hours {
+  position: absolute;
+  bottom: 10px;
+  color: #248842;
+  font-weight: 700;
+  cursor: pointer;
+}
+.store-hours {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.store-hours span {
+  color: #248842;
+  font-weight: 700;
+}
+.store-msg span {
+  color: #248842;
+  font-weight: 700;
+  font-family: cursive;
+  max-width: 80%;
+  display: inline-block;
+}
+.hide-hours {
+  display: none;
+}
+/* Stores Styling Above ------------------- */
 /* Footer Styling Below ------------------- */
 footer {
   border: solid 1px green;
@@ -122,4 +203,13 @@ footer {
   .cart-toggle-large {
     display: block;
   }
+  /* Stores Styling Below ------------------- */
+  .store-hours {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .store-hours span {
+    display: block;
+  }
+  /* Stores Styling Above ------------------- */
 }
