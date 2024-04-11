@@ -55,7 +55,8 @@ function App() {
       'average_cost':'',
       'sku':'',
       'image_url':'',
-      'subcategory_id':''
+      'subcategory_id':'',
+      'preferred_vendor':''
     },
     {
       'short_description':'',
@@ -63,7 +64,8 @@ function App() {
       'average_cost':'',
       'sku':'',
       'image_url':'',
-      'subcategory_id':''
+      'subcategory_id':'',
+      'preferred_vendor':''
     },
     {
       'short_description':'',
@@ -71,7 +73,8 @@ function App() {
       'average_cost':'',
       'sku':'',
       'image_url':'',
-      'subcategory_id':''
+      'subcategory_id':'',
+      'preferred_vendor':''
     },
   ])
 

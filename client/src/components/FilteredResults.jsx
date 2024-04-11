@@ -10,8 +10,11 @@ export default function FilteredResults() {
     useEffect(() => {
         const getCategory = async() => {
             const response = await axios.get(`http://localhost:8000/products/`)
+            const response2 = await axios.get(`http://localhost:8000/subcategories/`)
             setProducts(response.data)
+            setSubcategoryData(response2.data)
             console.log(products)
+            console.log(subcategoryData)
         }
         getCategory()
     }, [])
@@ -32,12 +35,18 @@ export default function FilteredResults() {
             <>
             <div className="main-content results-page">
                 <h2>Results</h2>
+                    <h3>{subcategoryData[selectedSubcategory].name}</h3>
                     <div className='results-holder'>
                         {filteredResults.map(result => (
                         <div className='result' key={result.id} onClick={()=> {
                             navigate(`/products/${result.id}`)}}>
-                            <h3>{result.short_description}</h3>
                             <div><img alt={result.short_description} src={result.image_url}/></div>
+                            <div>
+                                <h4 className='result-header'>{result.short_description}</h4>
+                                <p className='result-vendor'>{result.preferred_vendor}</p>
+                                <p className='result-description'>{result.details}</p>
+                                <p className='result-cost'>${result.average_cost}</p>
+                            </div>
                         </div>
                         ))}  
                     </div>

@@ -4,11 +4,14 @@ body {
   position: relative;
   font-family: "Work Sans", sans-serif;
 }
-h2 {
+h2, h3 {
   font-size: 2.5rem;
   text-align: left;
   padding-left: 10px;
   color: #757474;
+}
+h3 {
+  font-size: 1.5rem;
 }
 .main-content {
   max-width: 900px;
@@ -215,11 +218,55 @@ main {
   padding: 10px;
   border-radius: 2px;
 }
+.subcategories-holder .subcategory:hover {
+  background-color: #eee;
+}
 .subcategories-holder .subcategory img {
   width: 150px;
   height: 100px;
 }
 /* Category Pages Styling Above ----------- */
+/* Results Page Styling Below ------------- */
+.results-holder {
+  margin: 0 10px;
+}
+.results-holder .result {
+  border: solid 1px #eee;
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 5px;
+}
+.results-holder .result:hover {
+  background-color: #eee;
+}
+.results-holder .result > div {
+  width: 48%;
+}
+.results-holder .result > div:nth-child(2) {
+  padding: 5px 5px 5px 30px;
+}
+.results-holder .result > div img {
+  width: 250px;
+  height: 150px;
+}
+h4.result-header {
+  font-family: cursive;
+  font-size: 2rem;
+}
+.result-vendor {
+  font-weight: 700;
+}
+.result-description {
+  padding: 0 5px;
+}
+.result-cost {
+  color: #248842;
+  font-size: 1.5rem;
+  text-align: right;
+}
+/* Results Page Styling Above ------------- */
 /* Stores Styling Below ------------------- */
 .stores-intro-msg {
   font-size: 1.25rem;
