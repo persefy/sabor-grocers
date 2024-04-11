@@ -6,7 +6,7 @@ Full stack application for niche fictional chain grocery stores that handles bas
 
 ## Table of Contents
 - [Use Case](#usecase)
-- [Technologies](#technologies)
+- [Technologies Used](#technologies-used)
 - [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Component Hierarchy Diagram](#component-hierarchy-diagram)
 - [Wireframes](#wireframes)
@@ -29,7 +29,8 @@ Growing retailer with multiple brick and mortar locations wants to enhance sales
 - Django (w/ PostgreSQL)
 - Hosted on Amazon RDS
 
-## Entity Relationship Diagram (ERD)
+## Entity Relationship Diagram
+
 #### V2
 [coming soon]
 
