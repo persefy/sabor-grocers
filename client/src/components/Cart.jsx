@@ -8,6 +8,21 @@ export default function Cart() {
             <div>
                 <div className='heading'>My Basket</div>
                 <div className='cart-items'>
+                    <div>
+                        <div><span>Organic Eggs</span></div>
+                        <br/>
+                        <div>Qty: <span>2</span></div>
+                        <br/>
+                        <Button>+</Button><Button>-</Button>
+                    </div>
+                    <div>
+                        <br/>
+                        <div><span>Chicken Wings</span></div>
+                        <br/>
+                        <div>Qty: <span>1</span></div>
+                        <br/>
+                        <Button>+</Button><Button>-</Button>
+                    </div>
                     {/* cart no --> checks existing carts, adds next number to back of list
                      */}
                      {/* 
@@ -21,7 +36,8 @@ export default function Cart() {
                             - qty (raise or lower - zero equals delete)
                             */}
                 </div>
-                <Button className='basic green'>Guest Check Out</Button>
+                <Button className='blue'>Guest Check Out</Button>
+                <Button className='basic red'>Clear Cart</Button>
             </div>
 
         </div>

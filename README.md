@@ -1,5 +1,6 @@
 # Sabor Grocers
 <img src="./readme-files/logo-large.png" width="500" height="200">
+
 ## Summary
 Full stack application for niche fictional chain grocery stores that handles basic inventory management and order handling for e-commerce site.
 
