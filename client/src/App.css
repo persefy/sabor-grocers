@@ -232,19 +232,22 @@ main {
 }
 .results-holder .result {
   border: solid 1px #eee;
+  margin: 10px 0;
+  padding: 10px;
+}
+.results-holder .result .flex-holder{
   display: flex;
   flex-direction: row;
-  margin: 10px 0;
-  cursor: pointer;
   padding: 5px;
+  cursor: pointer;
 }
 .results-holder .result:hover {
   background-color: #eee;
 }
-.results-holder .result > div {
+.results-holder .flex-holder > div {
   width: 48%;
 }
-.results-holder .result > div:nth-child(2) {
+.results-holder .flex-holder > div:nth-child(2) {
   padding: 5px 5px 5px 30px;
 }
 .results-holder .result > div img {
@@ -266,7 +269,45 @@ h4.result-header {
   font-size: 1.5rem;
   text-align: right;
 }
+.add-cart-item-btn {
+  width: 50px;
+}
+.add-cart-item-btn i {
+  padding-right: 5px;
+  display: inline-block;
+}
 /* Results Page Styling Above ------------- */
+/* Item Detail Page Styling Below ----------*/
+.item-img-holder {
+  width: 230px;
+  height: 200px;
+  background-color: #ddd;
+}
+.item-img-holder img {
+  width: 230px;
+  height: 200px;
+}
+.item-page-holder {
+  display: flex;
+  flex-direction: row;
+}
+.item-page-holder > div {
+  width: 50%;
+}
+.item-page-side-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1.8rem;
+}
+.item-page-side-info p {
+  place-self: center center;
+}
+.item-page-cost {
+  padding: 10px 30px 10px 10px;
+  font-size: 1.8rem;
+}
 /* Stores Styling Below ------------------- */
 .stores-intro-msg {
   font-size: 1.25rem;

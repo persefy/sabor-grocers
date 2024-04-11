@@ -77,7 +77,7 @@ function App() {
       'preferred_vendor':''
     },
   ])
-
+  const [selectedProduct, setselectedProduct] = useState(0)
   const [selectedSubcategory, setSelectedSubcategory] = useState(0)
 
   // "id": 1,
@@ -93,7 +93,7 @@ function App() {
   
   return (
     <div className='app'>
-    <DataContext.Provider value={{dimState, setDimState, categoryData, setCategoryData,subcategoryData, setSubcategoryData,products,setProducts, selectedSubcategory, setSelectedSubcategory}}>
+    <DataContext.Provider value={{dimState, setDimState, categoryData, setCategoryData,subcategoryData, setSubcategoryData,products,setProducts, selectedSubcategory, setSelectedSubcategory,selectedProduct, setselectedProduct}}>
       <DimmerDimmable as={Segment} dimmed={dimState}>
         <Header/>
         <Main/>
