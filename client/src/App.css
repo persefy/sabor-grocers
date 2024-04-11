@@ -201,6 +201,25 @@ main {
   border-radius: 900px;
 }
 /* Home Styling Above --------------------- */
+/* Category Pages Styling Below ----------- */
+.subcategories-holder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.subcategories-holder .subcategory {
+  width: 45%;
+  margin: 10px;
+  cursor: pointer;
+  border: solid 1px #eee;
+  padding: 10px;
+  border-radius: 2px;
+}
+.subcategories-holder .subcategory img {
+  width: 150px;
+  height: 100px;
+}
+/* Category Pages Styling Above ----------- */
 /* Stores Styling Below ------------------- */
 .stores-intro-msg {
   font-size: 1.25rem;

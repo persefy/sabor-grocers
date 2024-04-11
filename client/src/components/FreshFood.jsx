@@ -39,9 +39,8 @@ export default function FreshFoods() {
                 {freshFoodsSubCategories.map(subcategory => (
 
                 <div className='subcategory' key={subcategory.id}>
-                    <div>{subcategory.name}</div>
-                    <img alt={subcategory.name} src={subcategory.image_url}/>
-                    
+                    <h3>{subcategory.name}</h3>
+                    <div><img alt={subcategory.name} src={subcategory.image_url}/></div>
                 </div>
                 ))} 
                 </div>
