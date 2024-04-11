@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Accordion, Icon } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
 
 export default function StoreList() {
 

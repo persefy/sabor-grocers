@@ -1,9 +1,20 @@
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { Button } from 'semantic-ui-react'
 import axios from 'axios'
 
 export default function Home() {
     let navigate = useNavigate()
+    const [categories, setCategories] = useState()
+
+    useEffect(() => {
+        const getCategory = async() => {
+            const response = await axios.get(`http://localhost:8000/categories/`)
+            setCategories(response.data)
+            console.log(response.data)
+        }
+        getCategory()
+    }, [])
 
     return(
         <>
@@ -13,7 +24,7 @@ export default function Home() {
             
             <div className='home-block home-promo-msg'>
                 <p>
-                    <span className='savings'>April 21st - May 3rd</span><br/>
+                    <span className='savings'>Savings Event: April 21st - May 3rd</span><br/>
                     Head to your local store during the last two weeks of April for store-wide discounts on fresh foods and specialty coffee.
                 </p>
             </div>
