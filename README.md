@@ -41,7 +41,7 @@ Growing retailer with multiple brick and mortar locations wants to enhance sales
 <kbd><img src="https://github.com/persefy/sabor-grocers/assets/17712788/cc8e9eb8-bf1c-4306-acab-1dda1ec29541" width="300" height="170"></kbd>
 
 ## Component Hierarchy Diagram
-<img src="./readme-files/CHD.png" width="500" height="20">
+<img src="./readme-files/CHD.png" width="500" height="200">
 
 ## Wireframes
 ![image](https://github.com/persefy/sabor-grocers/assets/17712788/5e7f450d-d4b0-4bb9-a37d-7f4db18b1cce)
