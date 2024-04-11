@@ -2,6 +2,7 @@
 body {
   text-align: center;
   position: relative;
+  font-family: "Work Sans", sans-serif;
 }
 h2 {
   font-size: 2.5rem;
@@ -62,7 +63,6 @@ a.nav-item {
   text-decoration: none;
   font-size: 1.2rem;
   color: #eee;
-  font-family: 'Arial';
   display: inline-block;
   padding: 2px;
 }

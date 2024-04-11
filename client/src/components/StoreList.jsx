@@ -50,7 +50,7 @@ export default function StoreList() {
                             <div className='store-item'>
                                 <img alt='store image' src={store.image_url}/>
                                 <p><strong>Store Phone:</strong>&#43;1 {store.store_phone}</p>
-                                <p className='store-msg'>Manager's Message:<br/>
+                                <p className='store-msg'><strong>Manager's Message:</strong><br/>
                                     <span>{store.special_msg}</span>
                                 </p>
                             </div>
