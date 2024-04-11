@@ -4,35 +4,46 @@ import axios from 'axios'
 import DataContext  from '../DataContext';
 
 export default function FreshFoods() {
-    const { categoryData, setCategoryData} = useContext(DataContext);
-    const [categoryDataItem, setCategoryDataItem] = useState({})
+    const { subcategoryData, setSubcategoryData} = useContext(DataContext);
+    //const [subcategoryData, setSubcategoryData] = useState({})
 
     let navigate = useNavigate()
 
     useEffect(() => {
         const getCategory = async() => {
-            const response = await axios.get(`http://localhost:8000/categories/`)
-            setCategoryData(response.data)
-            setCategoryDataItem(response.data[0])
-            console.log(categoryData)
+            const response = await axios.get(`http://localhost:8000/subcategories/`)
+            setSubcategoryData(response.data)
+            console.log(subcategoryData)
         }
         getCategory()
     }, [])
 
-    if (!categoryData) {
+    let freshFoodsSubCategories = []
+    subcategoryData.forEach((subcategory) => {
+        if (subcategory.category_id=='1') {
+            freshFoodsSubCategories.push(subcategory)
+            console.log(`added ${subcategory.name}`)
+        }
+    })
+    console.log(freshFoodsSubCategories)
+   
+    
+
+    if (!subcategoryData) {
         return <h1>Loading data...</h1>
     } else {
         return (
             <div className='main-content fresh-foods'>
                 <h2>Fresh Foods</h2>
-                <div className='categories-holder'>
-                {categories.map(category => (
+                <div className='subcategories-holder'>
+                {freshFoodsSubCategories.map(subcategory => (
 
-                <div className='home-category' key={category.id}>
-                <img alt={category.name} src={category.image_url}/>
-                <div>{category.name}</div>
+                <div className='subcategory' key={subcategory.id}>
+                    <div>{subcategory.name}</div>
+                    <img alt={subcategory.name} src={subcategory.image_url}/>
+                    
                 </div>
-                ))}
+                ))} 
                 </div>
             </div>
         )

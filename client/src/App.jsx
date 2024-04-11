@@ -27,10 +27,25 @@ function App() {
     }
 
   ])
+  const [subcategoryData, setSubcategoryData] = useState([
+    {
+      'name': '',
+      'image_url':''
+    },
+    {
+      'name': '',
+      'image_url':''
+    },
+    {
+      'name': '',
+      'image_url':''
+    }
+
+  ])
 
   return (
     <div className='app'>
-    <DataContext.Provider value={{dimState, setDimState, categoryData, setCategoryData}}>
+    <DataContext.Provider value={{dimState, setDimState, categoryData, setCategoryData,subcategoryData, setSubcategoryData}}>
       <DimmerDimmable as={Segment} dimmed={dimState}>
         <Header/>
         <Main/>
