@@ -27,6 +27,7 @@ Growing retailer with multiple brick and mortar locations wants to enhance sales
 #### Back end
 - Python
 - Django (w/ PostgreSQL)
+- Hosted on Amazon RDS
 
 ## Entity Relationship Diagram (ERD)
 #### V2
