@@ -31,14 +31,17 @@ function App() {
     {
       'name': '',
       'image_url':''
+      
     },
     {
       'name': '',
       'image_url':''
+
     },
     {
       'name': '',
       'image_url':''
+
     }
 
   ])
