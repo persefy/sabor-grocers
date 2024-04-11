@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from 'react'
+import { useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import DataContext  from '../DataContext';
@@ -35,7 +35,10 @@ export default function FreshFoods() {
                 <div className='subcategories-holder'>
                 {filteredSubCategories.map(subcategory => (
 
-                <div className='subcategory' key={subcategory.id} onClick={()=> {navigate(`/results/${subcategory.name}`)}}>
+                <div className='subcategory' key={subcategory.id} onClick={()=> {
+                    navigate(`/results/${subcategory.name}`);
+                    setSelectedSubcategory(subcategory.id);
+                    }}>
                     <h3>{subcategory.name}</h3>
                     <div><img alt={subcategory.name} src={subcategory.image_url}/></div>
                 </div>

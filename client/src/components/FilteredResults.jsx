@@ -1,3 +1,8 @@
+import { useEffect, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import DataContext  from '../DataContext';
+
 export default function FilteredResults() {
     return(
         <>
