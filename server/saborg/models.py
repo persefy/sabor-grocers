@@ -4,6 +4,7 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    image_url = models.URLField(default='https://morguefile.nyc3.cdn.digitaloceanspaces.com/imageData/public/files/a/Ahborson/11/p/88aa2a498505059349099720d4edf153.jpg')
 
     def __str__(self):
         return self.name
