@@ -9,12 +9,12 @@ export default function Kitchen() {
     let navigate = useNavigate()
 
     useEffect(() => {
-        const getCategory = async() => {
+        const getSubCategory = async() => {
             const response = await axios.get(`http://localhost:8000/subcategories/`)
             setSubcategoryData(response.data)
             console.log(subcategoryData)
         }
-        getCategory()
+        getSubCategory()
     }, [])
 
     let filteredSubCategories = []

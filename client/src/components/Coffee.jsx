@@ -4,17 +4,17 @@ import axios from 'axios'
 import DataContext  from '../DataContext';
 
 export default function Coffee() {
-    const { subcategoryData, setSubcategoryData} = useContext(DataContext);
+    const { subcategoryData, setSubcategoryData, selectedSubcategory, setSelectedSubcategory} = useContext(DataContext);
 
     let navigate = useNavigate()
 
     useEffect(() => {
-        const getCategory = async() => {
+        const getSubCategory = async() => {
             const response = await axios.get(`http://localhost:8000/subcategories/`)
             setSubcategoryData(response.data)
             console.log(subcategoryData)
         }
-        getCategory()
+        getSubCategory()
     }, [])
 
     let filteredSubCategories = []
