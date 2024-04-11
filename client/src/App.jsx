@@ -12,7 +12,21 @@ import './App.css'
 
 function App() {
   const [dimState, setDimState] = useState(false)
-  const [categoryData, setCategoryData] = useState([])
+  const [categoryData, setCategoryData] = useState([
+    {
+      'name': '',
+      'image_url':''
+    },
+    {
+      'name': '',
+      'image_url':''
+    },
+    {
+      'name': '',
+      'image_url':''
+    }
+
+  ])
 
   return (
     <div className='app'>

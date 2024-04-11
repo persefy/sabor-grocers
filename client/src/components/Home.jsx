@@ -43,6 +43,7 @@ export default function Home() {
             <div>
                 <p>Click below to see our online selection available for local delivery or order for in-store pick-up.</p>
                 <ul className='home-category-links'>
+                    
                     <li onClick={()=> {navigate('/fresh-foods')}}>
                         <span><img src={categoryData[0].image_url}/></span>
                         <span>Fresh Foods</span>

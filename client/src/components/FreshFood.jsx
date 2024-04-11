@@ -14,7 +14,6 @@ export default function FreshFoods() {
             const response = await axios.get(`http://localhost:8000/categories/`)
             setCategoryData(response.data)
             setCategoryDataItem(response.data[0])
-            // console.log(response.data)
             console.log(categoryData)
         }
         getCategory()
@@ -27,13 +26,13 @@ export default function FreshFoods() {
             <div className='main-content fresh-foods'>
                 <h2>Fresh Foods</h2>
                 <div className='categories-holder'>
-                {/* {categories.map(category => (
+                {categories.map(category => (
 
                 <div className='home-category' key={category.id}>
                 <img alt={category.name} src={category.image_url}/>
                 <div>{category.name}</div>
                 </div>
-                ))} */}
+                ))}
                 </div>
             </div>
         )
