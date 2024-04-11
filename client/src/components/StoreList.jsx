@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Icon } from 'semantic-ui-react'
 
-export default function StoreList(convertTime) {
+export default function StoreList({convertTime}) {
 
     const [stores, setStores] = useState()
 
@@ -10,7 +10,7 @@ export default function StoreList(convertTime) {
         const getStore = async() => {
             const response = await axios.get(`http://localhost:8000/stores/`)
             setStores(response.data)
-            console.log(response.data)
+
         }
         getStore()
     }, [])
@@ -57,13 +57,13 @@ export default function StoreList(convertTime) {
                             </div>
                         </div>
                         <div className='store-hours hide-hours'>
-                            <p><span>Sunday:</span> {store.sunday_start_time} &#8722; {store.sunday_start_time}</p>
-                            <p><span>Monday:</span> {store.sunday_start_time} &#8722; {store.sunday_start_time}</p>
-                            <p><span>Tuesday:</span> {store.sunday_start_time} &#8722; {store.sunday_start_time}</p>
-                            <p><span>Wednesday:</span> {store.sunday_start_time} &#8722; {store.sunday_start_time}</p>
-                            <p><span>Thursday:</span> {store.sunday_start_time} &#8722; {store.sunday_start_time}</p>
-                            <p><span>Friday:</span> {store.sunday_start_time} &#8722; {store.sunday_start_time}</p>
-                            <p><span>Saturday:</span> {store.sunday_start_time} &#8722; {store.sunday_start_time}</p>
+                            <p><span>Sunday:</span> {convertTime(store.sunday_start_time)} &#8722; {convertTime(store.sunday_end_time)}</p>
+                            <p><span>Monday:</span> {convertTime(store.sunday_start_time)} &#8722; {convertTime(store.sunday_end_time)}</p>
+                            <p><span>Tuesday:</span> {convertTime(store.sunday_start_time)} &#8722; {convertTime(store.sunday_end_time)}</p>
+                            <p><span>Wednesday:</span> {convertTime(store.sunday_start_time)} &#8722; {convertTime(store.sunday_end_time)}</p>
+                            <p><span>Thursday:</span> {convertTime(store.sunday_start_time)} &#8722; {convertTime(store.sunday_end_time)}</p>
+                            <p><span>Friday:</span> {convertTime(store.sunday_start_time)} &#8722; {convertTime(store.sunday_end_time)}</p>
+                            <p><span>Saturday:</span> {convertTime(store.sunday_start_time)} &#8722; {convertTime(store.sunday_end_time)}</p>
                         </div>
                     </div>
                 ))}
@@ -73,27 +73,5 @@ export default function StoreList(convertTime) {
 
             </>
         )
-                    
-    // sunday_open = models.BooleanField(default=True)
-    // monday_open = models.BooleanField(default=True)
-    // tuesday_open = models.BooleanField(default=True)
-    // wednesday_open = models.BooleanField(default=True)
-    // thursday_open = models.BooleanField(default=True)
-    // friday_open = models.BooleanField(default=True)
-    // saturday_open = models.BooleanField(default=False)
-    // sunday_start_time = models.TimeField(blank=True)
-    // sunday_end_time = models.TimeField(blank=True)
-    // monday_start_time = models.TimeField(blank=True)
-    // monday_end_time = models.TimeField(blank=True)
-    // tuesday_start_time = models.TimeField(blank=True)
-    // tuesday_end_time = models.TimeField(blank=True)
-    // wednesday_start_time = models.TimeField(blank=True)
-    // wednesday_end_time = models.TimeField(blank=True)
-    // thursday_start_time = models.TimeField(blank=True)
-    // thursday_end_time = models.TimeField(blank=True)
-    // friday_start_time = models.TimeField(blank=True)
-    // friday_end_time = models.TimeField(blank=True)
-    // saturday_start_time = models.TimeField(blank=True)
-    // saturday_end_time = models.TimeField(blank=True)
     }
 }

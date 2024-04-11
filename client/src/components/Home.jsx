@@ -12,20 +12,20 @@ export default function Home() {
     useEffect(() => {
         const getCategory = async() => {
             const response = await axios.get(`http://localhost:8000/categories/`)
-            setCategories(response.data)
             setCategoryData(response.data)
             // console.log(response.data)
             console.log(categoryData)
         }
         getCategory()
-    }, [])
+    }, [categoryData])
 
-    return(
+    if (!categoryData) {
+        return <h1>Loading data...</h1>
+    } else {
+        return (
         <>
         <div className='main-content'>
             <h2>Welcome to Sabor Grocers!</h2>
-            
-            
             <div className='home-block home-promo-msg'>
                 <p>
                     <span className='savings'>Savings Event: April 21st - May 3rd</span><br/>
@@ -62,4 +62,5 @@ export default function Home() {
         </div>
         </>
     )
+}
 }
