@@ -337,10 +337,22 @@ footer::after {
   }
   /* Home Styling Below --------------------- */
   /* Home Styling Above --------------------- */
+  .home-category-links {
+    display: flex;
+    justify-content: space-around;
+  }
   .home-category-links li {
-    display: inline-block;
-    width: 20%;
+    width: 240px;
     margin: 10px 20px;
+    height: 100%;
+  }
+  .home-category-links li img {
+    width: 230px;
+    height: 173px;
+  }
+  .home-category-links li:nth-child(3) img {
+    border: solid 1px red;
+    display: inline-block;
   }
   /* Stores Styling Below ------------------- */
   .stores-intro-msg {

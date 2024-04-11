@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Icon } from 'semantic-ui-react'
 
-export default function StoreList() {
+export default function StoreList(convertTime) {
 
     const [stores, setStores] = useState()
 

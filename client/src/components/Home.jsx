@@ -32,6 +32,10 @@ export default function Home() {
                     Head to your local store during the last two weeks of April for store-wide discounts on fresh foods and specialty coffee.
                 </p>
             </div>
+            <div className='home-block'>
+                <p>Fresh foods await!</p>
+                <div><Button size='massive' className='basic green' onClick={()=> {navigate('/stores')}}>Find Local Store</Button></div>
+            </div>
             <div className='home-intro'>
                 <p>Sabor Grocers is a chain grocery retailer offering fresh foods, whole coffee beans, and other kitchen goodies in the greater Pinn City area.</p>
                 <p>We carry specialty, quality coffee beans freshly imported from Colombia, Brazil and more! </p>
@@ -53,10 +57,7 @@ export default function Home() {
                     </li>
                 </ul>
             </div>
-            <div className='home-block'>
-                <p>Fresh foods await!</p>
-                <div><Button size='massive' className='basic green' onClick={()=> {navigate('/stores')}}>Find Local Store</Button></div>
-            </div>
+            
             
         </div>
         </>
