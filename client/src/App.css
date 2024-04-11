@@ -130,10 +130,14 @@ main {
   background-color: #eadb54;
   padding: 10px;
   margin: 10px;
+  position: relative;
 }
 .store {
   border-bottom: 1px solid #e2e0e0;
   margin: 10px;
+}
+.store:last-child {
+  border: none;
 }
 .stores-holder .store-columns {
   display: flex;
@@ -205,7 +209,43 @@ main {
 /* Stores Styling Above ------------------- */
 /* Footer Styling Below ------------------- */
 footer {
-  border: solid 1px green;
+  min-height: 150px;
+  background: url(https://morguefile.nyc3.cdn.digitaloceanspaces.com/imageData/public/files/s/Seemann/04/l/142868686685ow7.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  box-shadow: inset 0 0 10px #000;
+}
+footer::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #424040;
+  opacity: .7;
+  top: 0;
+  left: 0;
+}
+.footer-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  padding: 20px 10px 10px;
+}
+.footer-content p, .footer-content a {
+  color: #eee;
+  margin: 0;
+}
+.footer-content a:hover {
+  color: #248842;
+  background-color: #eee;
+}
+.footer-content p.credit {
+  margin: 10px 5px 5px;
 }
 /* Footer Styling Above ------------------- */
 @media screen and (min-width:750px) {
@@ -221,6 +261,12 @@ footer {
     display: block;
   }
   /* Stores Styling Below ------------------- */
+  .stores-intro-msg {
+    font-size: 1.25rem;
+    padding: 30px 100px;
+    line-height: 2;
+    margin: 0 10px 30px;
+  }
   .store-pickup-enabled {
     display: inline-block;
     margin-top: 20px;
