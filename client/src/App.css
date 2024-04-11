@@ -168,10 +168,11 @@ main {
   color: #248842;
   font-weight: 700;
   padding: 40px;
+  background: #d0fadc;
 }
 .home-intro p {
   width: 80%;
-place-self: center;
+  place-self: center;
 }
 .home-category-links {
   margin: 0;
@@ -336,10 +337,15 @@ footer::after {
     display: block;
   }
   /* Home Styling Below --------------------- */
-  /* Home Styling Above --------------------- */
+  .home-intro {
+    font-size: 1.5rem;
+    margin: 10px 0 20px;
+  }
+
   .home-category-links {
     display: flex;
     justify-content: space-around;
+    margin: 40px 0;
   }
   .home-category-links li {
     width: 240px;
@@ -351,9 +357,9 @@ footer::after {
     height: 173px;
   }
   .home-category-links li:nth-child(3) img {
-    border: solid 1px red;
     display: inline-block;
   }
+  /* Home Styling Above --------------------- */
   /* Stores Styling Below ------------------- */
   .stores-intro-msg {
     font-size: 1.25rem;
