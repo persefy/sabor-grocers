@@ -5,14 +5,14 @@
 Full stack application for niche fictional chain grocery stores that handles basic inventory management and order handling for e-commerce site.
 
 ## Table of Contents
-- Use Case
-- Technologies
-- Entity Relationship Diagram (ERD)
-- Component Hierarchy Diagram
-- Wireframes
-- Site Layout
-- Trello Board
-- MVP/Stretch Goals
+- [Use Case](#usecase)
+- [Technologies](#technologies)
+- [Entity Relationship Diagram](#entity-relationship-diagram)
+- [Component Hierarchy Diagram](#component-hierarchy-diagram)
+- [Wireframes](#wireframes)
+- [Site Layout](#site-layout)
+- [Trello Board](#trello-board)
+- [MVP/Stretch Goals](#mvpstretch-goals)
 
 ## Use Case
 Growing retailer with multiple brick and mortar locations wants to enhance sales by providing customers with ability to order ahead to secure purchase commitment, create process improvements to offload inventory, and increase customer satisfaction.
