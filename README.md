@@ -29,14 +29,21 @@ Growing retailer with multiple brick and mortar locations wants to enhance sales
 
 ## Entity Relationship Diagram (ERD)
 #### V2
-
-<img src="./readme-files/SimplifiedERD_V2.png" width="500" height="270">
+[coming soon]
 
 #### V1
 <kbd><img src="https://github.com/persefy/sabor-grocers/assets/17712788/0e56a995-75d1-43e3-9797-09d3ecc56f51" width="300" height="170"></kbd>
 <kbd><img src="https://github.com/persefy/sabor-grocers/assets/17712788/78b435d6-5045-4899-aa8e-7ee0553d353f" width="300" height="170"></kbd>
 <kbd><img src="https://github.com/persefy/sabor-grocers/assets/17712788/cc8e9eb8-bf1c-4306-acab-1dda1ec29541" width="300" height="170"></kbd>
+
 ## Component Hierarchy Diagram
+#### V3
+[coming soon]
+
+#### V2
+<img src="./readme-files/SimplifiedERD_V2.png" width="500" height="270">
+
+#### V1
 <kbd><img src="https://github.com/persefy/sabor-grocers/assets/17712788/b2ad40be-8f79-4821-becd-711d81b6afc5" width="300" height="170"></kbd>
 <kbd><img src="https://github.com/persefy/sabor-grocers/assets/17712788/5ee81bd3-f778-4431-9335-fd6c909b342e" width="300" height="170"></kbd>
 
