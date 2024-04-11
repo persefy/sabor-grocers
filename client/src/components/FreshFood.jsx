@@ -5,7 +5,6 @@ import DataContext  from '../DataContext';
 
 export default function FreshFoods() {
     const { subcategoryData, setSubcategoryData} = useContext(DataContext);
-    //const [subcategoryData, setSubcategoryData] = useState({})
 
     let navigate = useNavigate()
 
@@ -26,8 +25,6 @@ export default function FreshFoods() {
         }
     })
     console.log(freshFoodsSubCategories)
-   
-    
 
     if (!subcategoryData) {
         return <h1>Loading data...</h1>
