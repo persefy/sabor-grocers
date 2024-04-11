@@ -1,4 +1,5 @@
 # Sabor Grocers
+<kbd><img src="./readme-files/logo-large.png" width="300" height="170"></kbd>
 ## Summary
 Full stack application for niche fictional chain grocery stores that handles basic inventory management and order handling for e-commerce site.
 
@@ -16,12 +17,14 @@ Full stack application for niche fictional chain grocery stores that handles bas
 Growing retailer with multiple brick and mortar locations wants to enhance sales by providing customers with ability to order ahead to secure purchase commitment, create process improvements to offload inventory, and increase customer satisfaction.
 
 ## Technologies Used
+### Front End
 - React
-- _Semantic UI_
+- Semantic UI
 - JavaScript
-- _TypeScript_
 - HTML
 - CSS
+### Back end
+- Python
 - Django (w/ PostgreSQL)
 
 ## Entity Relationship Diagram (ERD)
