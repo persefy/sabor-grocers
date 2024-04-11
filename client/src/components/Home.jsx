@@ -38,6 +38,13 @@ export default function Home() {
                     <li onClick={()=> {navigate('/coffee')}}>Coffee</li>
                     <li onClick={()=> {navigate('/kitchen')}}>Kitchen</li>
                 </ul>
+                    {/* <div className='categories-holder'>
+                        {categories.map(category => (
+                            <div className='category' key={category.id}>
+                            <div>Hello</div>
+                            </div>
+                        ))}
+                    </div> */}
             </div>
             <div className='home-block'>
                 <p>Fresh foods await!</p>
