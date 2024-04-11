@@ -37,6 +37,7 @@ export default function StoreList() {
                                         {store.street_address} <br/>
                                         {store.city}, {store.state}
                                     </p>
+                                    <div className='store-pickup-enabled'>Store Pickup Available</div>
                                 </div>
                                 <p className='toggle-store-hours' onClick={()=>
                                     {

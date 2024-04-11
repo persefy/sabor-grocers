@@ -164,6 +164,13 @@ main {
   font-size: 1.5rem;
   padding: 2px 0 2px;
 }
+.store-pickup-enabled {
+  border: solid 1px #ccc;
+  padding: 5px;
+  border-radius: 50px;
+  background-color: #eadb54;
+  opacity: .8;
+}
 .toggle-store-hours {
   position: absolute;
   bottom: 10px;
