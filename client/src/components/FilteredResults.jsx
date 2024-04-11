@@ -56,17 +56,12 @@ export default function FilteredResults() {
                                     <p className='result-cost'>${result.average_cost}</p>
                                 </div>
                             </div>
-                            <Button className='add-cart-item-btn green'><Icon name='plus' size='large'/></Button>
+                            {/* <Button className='add-cart-item-btn green'><Icon name='plus' size='large'/></Button> */}
                         </div>
                         ))}  
                     </div>
 
             </div>
-            {/* Display results based on:
-            
-            - display products filtered by match for product name, subcategory
-            
-            */}
             </>
         )
     }

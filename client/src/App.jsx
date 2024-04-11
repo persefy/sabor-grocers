@@ -82,26 +82,31 @@ function App() {
 
   const [productSearchQuery, setProductSearchQuery] = useState('')
   const [cartInfo, setCartInfo] = useState({
-    'cart no': '', 
+    'cart_no': '', 
     'customer_user_no': '3',
     'guest_checkout':'True',
     'cart_type':'delivery'
   })
+  const [cartInfoId,setCartInfoId] = useState(0)
+
   const [getCartData, setGetCartData] = useState([
     {
-    'cart no': '', 
-    'customer_user_no': '',
-    'guest_checkout':'',
-    'cart_type':''
+      'id':'',
+      'cart no': '', 
+      'customer_user_no': '',
+      'guest_checkout':'',
+      'cart_type':''
     },
     {
-    'cart no': '', 
-    'customer_user_no': '',
-    'guest_checkout':'',
-    'cart_type':''
+      'id':'',
+      'cart no': '', 
+      'customer_user_no': '',
+      'guest_checkout':'',
+      'cart_type':''
     }
   ])
   const [cartItemInfo, setCartItemInfo] = useState({
+    'id':'',
     'cart_item': '',
     'cart_no': '',
     'product_no': '',
@@ -109,12 +114,14 @@ function App() {
   })
   const [getCartItemData, setGetCartItemData] = useState([
     {
+      'id':'',
       'cart_item': '',
       'cart_no': '',
       'product_no': '',
       'qty': 0,
     },
     {
+      'id':'',
       'cart_item': '',
       'cart_no': '',
       'product_no': '',
@@ -122,9 +129,10 @@ function App() {
     }
   ])
 
+
   return (
     <div className='app'>
-    <DataContext.Provider value={{dimState, setDimState, categoryData, setCategoryData,subcategoryData, setSubcategoryData,products,setProducts, selectedSubcategory, setSelectedSubcategory,selectedProduct, setselectedProduct,productSearchQuery, setProductSearchQuery,cartInfo, setCartInfo,getCartData, setGetCartData, cartItemInfo, setCartItemInfo,getCartItemData, setGetCartItemData}}>
+    <DataContext.Provider value={{dimState, setDimState, categoryData, setCategoryData,subcategoryData, setSubcategoryData,products,setProducts, selectedSubcategory, setSelectedSubcategory,selectedProduct, setselectedProduct,productSearchQuery, setProductSearchQuery,cartInfo, setCartInfo,getCartData, setGetCartData, cartItemInfo, setCartItemInfo,getCartItemData, setGetCartItemData,cartInfoId,setCartInfoId}}>
       <DimmerDimmable as={Segment} dimmed={dimState}>
         <Header/>
         <Main/>

@@ -315,7 +315,7 @@ h4.result-header {
 .item-img-holder {
   width: 230px;
   height: 200px;
-  background-color: #ddd;
+  /* background-color: #fff; */
 }
 .item-img-holder img {
   width: 230px;
