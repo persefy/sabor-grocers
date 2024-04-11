@@ -17,7 +17,7 @@ export default function Home() {
             console.log(categoryData)
         }
         getCategory()
-    }, [categoryData])
+    }, [])
 
     if (!categoryData) {
         return <h1>Loading data...</h1>

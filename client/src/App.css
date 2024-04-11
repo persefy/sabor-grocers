@@ -79,6 +79,10 @@ a.nav-item:hover {
   justify-content: right;
   margin-bottom: 2px;
 }
+.search-form-toggle {
+  display: none
+  /* disable until more time to tink with feature */
+}
 .search-form-toggle button img {
   width: 23px;
 } 
@@ -88,6 +92,10 @@ a.nav-item:hover {
 }
 .cart-toggle-large {
   display: none;
+}
+.user-button-holder {
+  display: none;
+  /* disabled this feature for now until ready to implement user accounts */
 }
 .user-button-holder .user {
   padding: 1px 0 20px 8px;
@@ -104,6 +112,13 @@ a.nav-item:hover {
   top: 25%;
   display: flex;
   justify-content: center;
+}
+.search-bar {
+  z-index: 8;
+}
+.search-form input {
+  margin: 5px;
+  display: inline-block;
 }
 /* Search Bar Styling Above --------------- */
 /* Cart Quickview Styling Below ----------- */

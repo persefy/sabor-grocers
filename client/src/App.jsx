@@ -80,20 +80,11 @@ function App() {
   const [selectedProduct, setselectedProduct] = useState(0)
   const [selectedSubcategory, setSelectedSubcategory] = useState(0)
 
-  // "id": 1,
-  // "product_no": "1",
-  // "product_url": "http://localhost:8000/products/1",
-  // "short_description": "Whole Bean Colombian Coffee",
-  // "details": "Whole Bean Colombian Coffee",
-  // "preferred_vendor": "Sanchez Roast",
-  // "average_cost": "25.00",
-  // "sku": 1234,
-  // "image_url": "https://t4.ftcdn.net/jpg/05/48/72/31/360_F_548723167_cKAqMvsEswmLiRpIDeBYFHdzhhhAX46J.jpg",
-  // "subcategory_id": 1,
+  const [productSearchQuery, setProductSearchQuery] = useState('')
   
   return (
     <div className='app'>
-    <DataContext.Provider value={{dimState, setDimState, categoryData, setCategoryData,subcategoryData, setSubcategoryData,products,setProducts, selectedSubcategory, setSelectedSubcategory,selectedProduct, setselectedProduct}}>
+    <DataContext.Provider value={{dimState, setDimState, categoryData, setCategoryData,subcategoryData, setSubcategoryData,products,setProducts, selectedSubcategory, setSelectedSubcategory,selectedProduct, setselectedProduct,productSearchQuery, setProductSearchQuery}}>
       <DimmerDimmable as={Segment} dimmed={dimState}>
         <Header/>
         <Main/>
