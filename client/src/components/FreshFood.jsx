@@ -1,9 +1,7 @@
-export default function NavResults() {
-    
+export default function FreshFoods() {
     return(
         <>
         
         </>
-
     )
 }

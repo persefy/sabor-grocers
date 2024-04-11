@@ -1,13 +1,14 @@
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import FilteredResults from './FilteredResults'
-import NavResults from './NavResults'
 import ItemDetail from './ItemDetail'
 import StoreList from './StoreList'
-import StoreDetails from './StoreDetails'
 import User from './User'
 import Cart from './Cart'
 import Order from './Order'
+import FreshFoods from './FreshFood'
+import Coffee from './Coffee'
+import Kitchen from './Kitchen'
 
 export default function Main() {
     return(
@@ -16,10 +17,11 @@ export default function Main() {
             <Routes>
                 <Route exact path ="/" element ={<Home/>} />
                 <Route exact path ="/results/:query" element ={<FilteredResults/>} />
-                <Route exact path ="/:category" element ={<NavResults/>} />
+                <Route exact path ="/fresh-foods" element ={<FreshFoods/>} />
+                <Route exact path ="/coffee" element ={<Coffee/>} />
+                <Route exact path ="/kitchen" element ={<Kitchen/>} />
                 <Route exact path ="/products/:id" element ={<ItemDetail/>} />
                 <Route exact path ="/stores" element ={<StoreList/>} />
-                <Route exact path ="/stores/:id" element ={<StoreDetails/>} />
                 <Route exact path ="/user" element ={<Home/>} />
                 <Route exact path ="/user" element ={<User/>} />
                 <Route exact path ="/cart" element ={<Cart/>} />
