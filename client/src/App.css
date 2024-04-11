@@ -8,6 +8,7 @@ h2 {
   font-size: 2.5rem;
   text-align: left;
   padding-left: 10px;
+  color: #757474;
 }
 .main-content {
   max-width: 900px;
@@ -120,7 +121,7 @@ a.nav-item:hover {
 /* Main Styling Below --------------------- */
 main {
   min-height: 500px;
-  margin-top: 170px;
+  margin-top: 180px;
 }
 /* Main Styling Above --------------------- */
 /* Stores Styling Below ------------------- */
@@ -155,6 +156,10 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: top center;
+}
+.stores-holder .store-item:nth-child(2) p {
+  padding-top: 5px;
+  font-size: 1.2rem;
 }
 .stores-holder > div img {
   width: 100%;
@@ -204,6 +209,11 @@ footer {
 }
 /* Footer Styling Above ------------------- */
 @media screen and (min-width:750px) {
+  /* Main Styling Below ------------------- */
+  main {
+    margin-top: 200px;
+  }
+  /* Main Styling Above ------------------- */
   .search-form-toggle, .cart-toggle-mobile {
     display: none;
   }
@@ -211,12 +221,19 @@ footer {
     display: block;
   }
   /* Stores Styling Below ------------------- */
+  .store-pickup-enabled {
+    display: inline-block;
+    margin-top: 20px;
+  }
   .store-hours {
     flex-direction: row;
     justify-content: space-around;
   }
   .store-hours span {
     display: block;
+  }
+  .stores-holder .store-item:nth-child(2) p {
+    font-size: 1.5rem;
   }
   /* Stores Styling Above ------------------- */
 }
