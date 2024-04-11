@@ -17,14 +17,14 @@ export default function Kitchen() {
         getCategory()
     }, [])
 
-    let freshFoodsSubCategories = []
+    let filteredSubCategories = []
     subcategoryData.forEach((subcategory) => {
         if (subcategory.category_id=='3') {
-            freshFoodsSubCategories.push(subcategory)
+            filteredSubCategories.push(subcategory)
             console.log(`added ${subcategory.name}`)
         }
     })
-    console.log(freshFoodsSubCategories)
+    console.log(filteredSubCategories)
    
     if (!subcategoryData) {
         return <h1>Loading data...</h1>
@@ -33,9 +33,8 @@ export default function Kitchen() {
             <div className='main-content kitchen'>
                 <h2>Coffee</h2>
                 <div className='subcategories-holder'>
-                {freshFoodsSubCategories.map(subcategory => (
-
-                <div className='subcategory' key={subcategory.id}>
+                {filteredSubCategories.map(subcategory => (
+                <div className='subcategory' key={subcategory.id} onClick={()=> {navigate(`/results/${subcategory.name}`)}}>
                     <h3>{subcategory.name}</h3>
                     <div><img alt={subcategory.name} src={subcategory.image_url}/></div>
                 </div>

@@ -25,7 +25,7 @@ export default function Main() {
         <main>
             <Routes>
                 <Route exact path ="/" element ={<Home/>} />
-                <Route exact path ="/results/:query" element ={<FilteredResults/>} />
+                <Route path ="/results/:query" element ={<FilteredResults/>} />
                 <Route exact path ="/fresh-foods" element ={<FreshFoods/>} />
                 <Route exact path ="/coffee" element ={<Coffee/>} />
                 <Route exact path ="/kitchen" element ={<Kitchen/>} />
