@@ -79,25 +79,25 @@ export default function ItemDetail() {
     
 
 
-    const DeleteCart = async () => {
-        // axios.delete(`http://localhost:8000/carts/${cartInfo.cart_no}/`)
-        axios.delete(`http://localhost:8000/carts/${cartInfoId}/`)
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-            console.log(error);
-            });
+    // const DeleteCart = async () => {
+    //     // axios.delete(`http://localhost:8000/carts/${cartInfo.cart_no}/`)
+    //     axios.delete(`http://localhost:8000/carts/${cartInfoId}/`)
+    //         .then(function (response) {
+    //             console.log(response);
+    //         })
+    //         .catch(function (error) {
+    //         console.log(error);
+    //         });
 
-          setCartInfo(
-            {
-                'cart_no': '', 
-                'customer_user_no': '3',
-                'guest_checkout':'True',
-                'cart_type':'delivery'
-            })
-            console.log(cartInfo)
-    }
+    //       setCartInfo(
+    //         {
+    //             'cart_no': '', 
+    //             'customer_user_no': '3',
+    //             'guest_checkout':'True',
+    //             'cart_type':'delivery'
+    //         })
+    //         console.log(cartInfo)
+    // }
 
     return(
         <>
@@ -121,13 +121,13 @@ export default function ItemDetail() {
                         cartInfo.cart_no = newCartNo
                         console.log(cartInfo)
                         createCart()
+                        // + Add cart item to cart number
                         
                     } else {
-                        console.log('removing cart data')
-                        // DeleteCart()
+                        console.log('Add cart item to cart')
+                        // only add cart item
                     }
-                    // create a cart if none already existing
-                    // add cart item to cart
+                    
                 }}><Icon name='plus' size='large'/>Add to Cart</Button>
         </div>
         </>

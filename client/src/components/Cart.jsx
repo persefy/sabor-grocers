@@ -8,6 +8,7 @@ export default function Cart() {
             <div>
                 <div className='heading'>My Basket</div>
                 <div className='cart-items'>
+                {/* ---SAMPLE CART Items for presentation---                     
                     <div>
                         <div><span>Organic Eggs</span></div>
                         <br/>
@@ -22,7 +23,8 @@ export default function Cart() {
                         <div>Qty: <span>1</span></div>
                         <br/>
                         <Button>+</Button><Button>-</Button>
-                    </div>
+                    </div> */}
+                    
                     {/* cart no --> checks existing carts, adds next number to back of list
                      */}
                      {/* 
@@ -37,7 +39,10 @@ export default function Cart() {
                             */}
                 </div>
                 <Button className='blue'>Guest Check Out</Button>
-                <Button className='basic red'>Clear Cart</Button>
+                <Button className='basic red' onClick={()=>{
+                    //show window with confirmation 'clear' or 'keep cart' button
+                    //test simple delete first
+                    }}>Clear Cart</Button>
             </div>
 
         </div>
